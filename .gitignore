@@ -1,0 +1,4 @@
+*.pyc
+*.swp
+covide_pandanalysis.egg-info
+data

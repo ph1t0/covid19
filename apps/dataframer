@@ -1,0 +1,43 @@
+#!/bin/env python
+
+import os
+from covid19.data_fetcher import download_files
+import argparse
+import glob
+import pandas as pd
+import sys
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="covid-pandanalysis")
+    parser.add_argument("--fetch", action="store_true", help="Download data")
+    args = parser.parse_args()
+
+    OUTPUT_DIR = "./data"
+    if args.fetch:
+        URL = "https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data"  # JHU CCSE dataset
+        os.makedirs(OUTPUT_DIR, exist_ok=True)
+        download_files(OUTPUT_DIR, URL)
+    else:
+        if not os.path.exists(OUTPUT_DIR):
+            print("First run dataframer with --fetch option")
+            print("Quiting...")
+            sys.exit(0)
+
+    files = glob.glob(OUTPUT_DIR+'/time*.csv')
+    dfs = []
+    for file in files:
+        df = pd.read_csv(file).rename(columns={'Province/State':'state', 'Country/Region': 'country' }).drop(['Lat', 'Long'], axis=1)
+        type = file.split('-')[-1][:-4]
+        df['type'] = type
+        index_columns = [df.country, df.state, df.type]
+        index = list(zip(*index_columns))
+        df.drop(['country', 'state', 'type'], axis=1, inplace=True)
+        index_df = pd.MultiIndex.from_tuples(index, names=['country', 'state', 'type'])
+        dfs.append(df.set_index(index_df))
+
+    el_df = pd.concat(dfs).T
+    el_df.set_index(pd.to_datetime(el_df.index), inplace=True)
+    final_df = el_df.stack()
+
+    from IPython import embed; embed()
