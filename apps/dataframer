@@ -38,6 +38,6 @@ if __name__ == "__main__":
 
     all_cases_df = pd.concat(dfs).T
     all_cases_df.set_index(pd.to_datetime(all_cases_df.index), inplace=True)
-    df = all_cases_df.stack().stack()
+    df = all_cases_df.stack().stack().stack()
 
     from IPython import embed; embed()
