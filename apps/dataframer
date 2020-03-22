@@ -28,9 +28,9 @@ if __name__ == "__main__":
     dfs = []
     for file in files:
         df = pd.read_csv(file).rename(columns={'Province/State':'state', 'Country/Region': 'country' }).drop(['Lat', 'Long'], axis=1)
-        type = file.split('-')[-1][:-4]
-        df['case'] = type
-        index_columns = [df.country, df.state, df.type]
+        case = file.split('-')[-1][:-4]
+        df['case'] = case
+        index_columns = [df.country, df.state, df.case]
         index = list(zip(*index_columns))
         df.drop(['country', 'state', 'case'], axis=1, inplace=True)
         index_df = pd.MultiIndex.from_tuples(index, names=['country', 'state', 'case'])
