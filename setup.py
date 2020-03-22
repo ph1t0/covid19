@@ -3,7 +3,7 @@
 import glob
 from distutils.core import setup
 
-setup(name='covide-pandanalysis',
+setup(name='pandamia',
       version='1.0',
       description='Python COVID-19 analysis framework',
       author='Gonzalo Figueroa',
