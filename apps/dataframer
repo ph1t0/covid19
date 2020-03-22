@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     all_cases_df = pd.concat(dfs).T
     all_cases_df.set_index(pd.to_datetime(all_cases_df.index), inplace=True)
-    df = all_cases_df.stack().stack().stack()
+    df = all_cases_df.stack([1,0]).stack()
     idx_names = list(df.index.names)
     idx_names[0] = 'date'
     df.index.set_names(idx_names, inplace=True)
