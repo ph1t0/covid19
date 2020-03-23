@@ -8,22 +8,18 @@ import pandas as pd
 import sys
 
 
+OUTPUT_DIR = "./data"
+URL = "https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data"  # JHU CCSE dataset
+
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="covid-pandanalysis")
-    parser.add_argument("--fetch", action="store_true", help="Download data")
-    args = parser.parse_args()
+    #   parser = argparse.ArgumentParser(description="covid-pandanalysis")
+    #   parser.add_argument("--fetch", action="store_true", help="Download data")
+    #   args = parser.parse_args()
 
-    OUTPUT_DIR = "./data"
-
-    if args.fetch:
-        URL = "https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data"  # JHU CCSE dataset
+    if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR, exist_ok=True)
         download_files(OUTPUT_DIR, URL)
-    else:
-        if not os.path.exists(OUTPUT_DIR):
-            print("First run dataframer with --fetch option")
-            print("Quiting...")
-            sys.exit(0)
 
     files = [OUTPUT_DIR+'/time_series_19-covid-Confirmed.csv', OUTPUT_DIR+'/time_series_19-covid-Deaths.csv', OUTPUT_DIR+'/time_series_19-covid-Recovered.csv']
     dfs = []
