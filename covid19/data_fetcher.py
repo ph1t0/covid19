@@ -3,6 +3,7 @@ import sys
 import os
 import urllib.request
 import json
+from tqdm import tqdm
 
 
 def file_download(output_dir, file_data):
@@ -15,7 +16,7 @@ def file_download(output_dir, file_data):
 
 def dir_list(output_dir, data):
     IGNORE = ['README.md', ".gitignore"]
-    for item in data:
+    for item in tqdm(data):
         if isinstance(item, dict) and item["type"] == "dir":
             data_dir = request(item["url"])
             dir_list(output_dir, data_dir)

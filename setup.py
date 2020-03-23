@@ -11,5 +11,5 @@ setup(name='pandamia',
       url='https://github.com/ph1t0/covid19.git',
       packages=['covid19'],
       scripts=glob.glob("apps/*"),
-      install_requires=['pandas', 'matplotlib', 'ipython'],
+      install_requires=['pandas', 'matplotlib', 'ipython', 'tqdm'],
      )
