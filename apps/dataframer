@@ -19,9 +19,12 @@ if __name__ == "__main__":
     #   args = parser.parse_args()
 
     if not os.path.exists('COVID-19'):
+        print('Cloning %s ...' % DATA_REPO_URL)
         sh.git.clone(DATA_REPO_URL)
+    print('Pulling last commit from %s ...' % DATA_REPO_URL)
     sh.git.pull(_cwd='COVID-19')
 
+    print('Parsing...')
     dfs = []
     for case, path in CASES:
         df = pd.read_csv(path).rename(columns={'Province/State':'state', 'Country/Region': 'country' }).drop(['Lat', 'Long'], axis=1)
