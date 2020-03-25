@@ -11,13 +11,12 @@ Fuente: https://www.argentina.gob.ar/coronavirus/informe-diario
 
 ### CSV
 
-No dice de dónde...
+No dice de dónde, pero según [Página12](https://www.pagina12.com.ar/250736-el-coronavirus-llego-a-la-argentina),
+fue en CABA.
 
 ```
-2020,03,5,CONFIRMADO,-,1
+2020,03,5,CONFIRMADO,CABA,1
 ```
-
-Se podría chequear con las noticias
 
 ## 2020 03 06
 
@@ -43,6 +42,11 @@ Se podría chequear con las noticias
 ## 2020 03 07
 
 no hay pdf
+https://www.lanacion.com.ar/sociedad/confirman-primer-muerto-coronavirus-argentina-hombre-63-nid2341027
+
+```
+2020,03,07,MUERTE,CABA,1
+```
 
 ## 2020 03 08
 
@@ -92,7 +96,6 @@ no hay pdf
 2020,03,09,CONFIRMADO,SANLUIS,1
 2020,03,09,CONFIRMADO,CHACO,2
 2020,03,09,CONFIRMADO,RIONEGRO,1
-2020,03,09,MUERTE,-,1
 ```
 
 ## 2020 03 10
