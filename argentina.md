@@ -8,6 +8,12 @@
 
 Para extraer los datos a un csv, usar [`make_csv_from_md`](./make_csv_from_md).
 
+### CSV
+
+```
+year,month,day,case,place,new
+```
+
 ## 2020 03 03
 
 ### Fuente
