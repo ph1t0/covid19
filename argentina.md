@@ -1,54 +1,70 @@
 # Argentina COVID-19 informes diarios
 
-Fuente: https://www.argentina.gob.ar/coronavirus/informe-diario
+## Fuentes
 
-## 2020 03 05
+* Principalmente https://www.argentina.gob.ar/coronavirus/informe-diario
+* Noticias de diarios, que no coinciden con los pdfs.
+* [Wikipedia](https://es.wikipedia.org/wiki/Pandemia_de_enfermedad_por_coronavirus_de_2020_en_Argentina)
 
-* A la fecha Argentina registra un (1) caso importado confirmado de COVID-19. El
-  paciente se encuentra cumpliendo el aislamiento establecido por las autoridades
-  sanitarias y en buen estado general.
-* Argentina no registra transmisión local del nuevo coronavirus SARS-Cov-2
+Para extraer los datos a un csv, usar [`make_csv_from_md`](./make_csv_from_md).
+
+## 2020 03 03
+
+### Fuente
+
+* [Wikipedia](https://es.wikipedia.org/wiki/Pandemia_de_enfermedad_por_coronavirus_de_2020_en_Argentina)
 
 ### CSV
 
-No dice de dónde, pero según [Página12](https://www.pagina12.com.ar/250736-el-coronavirus-llego-a-la-argentina),
-fue en CABA.
+```
+2020,03,03,CONFIRMADO,CABA,1
+```
+
+## 2020 03 05
+
+### Fuente
+
+* [Wikipedia](https://es.wikipedia.org/wiki/Pandemia_de_enfermedad_por_coronavirus_de_2020_en_Argentina)
+
+### CSV
 
 ```
-2020,03,5,CONFIRMADO,CABA,1
+2020,03,05,CONFIRMADO,CABA,1
 ```
 
 ## 2020 03 06
 
-* A la fecha Argentina registra dos (2) casos importados confirmados de COVID-19. Los
-  pacientes se encuentran cumpliendo el aislamiento establecido por las autoridades
-  sanitarias y en buen estado general.
-* Los contactos estrechos del primer caso confirmado fueron identificados y
-  contactados por las autoridades de la jurisdicción para que cumplan el aislamiento
-  domiciliario y se les realice a diario el seguimiento para la detección temprana en caso
-  que presenten síntomas. A la fecha, sólo uno (1) de los 11 contactos estrechos en
-  seguimiento presentó síntomas respiratorios con diagnóstico de influenza.
+### Fuente
+
+* [Wikipedia](https://es.wikipedia.org/wiki/Pandemia_de_enfermedad_por_coronavirus_de_2020_en_Argentina)
 
 ### CSV
 
-No dice de dónde son...
-
 ```
-2020,03,6,CONFIRMADO,-,1
+2020,03,06,CONFIRMADO,CABA,4
+2020,03,06,CONFIRMADO,CORDOBA,1
+2020,03,06,CONFIRMADO,CORDOBA,1
 ```
-
-Se podría chequear con las noticias
 
 ## 2020 03 07
 
-no hay pdf
-https://www.lanacion.com.ar/sociedad/confirman-primer-muerto-coronavirus-argentina-hombre-63-nid2341027
+### Fuente
+
+* no hay pdf del ministerio de salud
+* Según [La Nación](https://www.lanacion.com.ar/sociedad/confirman-primer-muerto-coronavirus-argentina-hombre-63-nid2341027) hoy fue la primer muerte y ya había 9 casos en Argentina.
+* [Wikipedia](https://es.wikipedia.org/wiki/Pandemia_de_enfermedad_por_coronavirus_de_2020_en_Argentina)
+* El caso de muerte no se registró antes como "confirmado". Yo lo agrego.
+
+### CSV
 
 ```
+2020,03,07,CONFIRMADO,CABA,1
 2020,03,07,MUERTE,CABA,1
 ```
 
 ## 2020 03 08
+
+### Fuente
 
 * A la fecha, el Servicio de virosis respiratorias del INEI ANLIS Malbrán analizo 28
   muestras correspondientes a casos sospechosos de COVID-19. Se informa que en tres
@@ -83,6 +99,8 @@ https://www.lanacion.com.ar/sociedad/confirman-primer-muerto-coronavirus-argenti
 
 ## 2020 03 09
 
+### Fuente
+
 * A la fecha, Argentina no registra transmisión comunitaria del nuevo coronavirus SARS-Cov-2.
 * Hoy fueron confirmados 5 nuevos casos de COVID-19 con antecedente de viaje a Europa. Se trata de
   residentes de CABA, San Luis, Chaco (2) y Río Negro. A la fecha, se registran un total de diecisiete
@@ -100,6 +118,8 @@ https://www.lanacion.com.ar/sociedad/confirman-primer-muerto-coronavirus-argenti
 
 ## 2020 03 10
 
+### Fuente
+
 * A la fecha, Argentina no registra transmisión comunitaria del nuevo coronavirus SARS-Cov-2
 * Hoy fueron confirmados dos (2) nuevos casos de COVID-19 con antecedente de viaje a Europa. Uno
   residente de CABA y otro de Provincia de Buenos Aires. A la fecha, se registran un total de diecinueve
@@ -115,6 +135,8 @@ https://www.lanacion.com.ar/sociedad/confirman-primer-muerto-coronavirus-argenti
 
 ## 2020 03 11
 
+### Fuente
+
 * A la fecha, en Argentina sólo se registran casos importados de COVID-19.
 * Hoy fueron confirmados dos (2) nuevos casos de COVID-19 con antecedente de viaje a Europa. Uno
   residente de CABA y otro de Provincia de Buenos Aires. A la fecha, se registran un total de veintiún
@@ -129,6 +151,8 @@ https://www.lanacion.com.ar/sociedad/confirman-primer-muerto-coronavirus-argenti
 ```
 
 ## 2020 03 12
+
+### Fuente
 
 * A la fecha, en Argentna la mayoría de los casos son importados. Se detecta transmisión local en
 contactos estrechos, sin evidencia de transmisión comunitaria.
@@ -148,9 +172,12 @@ No dice cómo están distribuidos. Los reparto a ojo:
 2020,03,12,CONFIRMADO,CORDOBA,2
 2020,03,12,CONFIRMADO,PCIABSAS,3
 2020,03,12,CONFIRMADO,CABA,3
+2020,03,12,RECUPERADO,CABA,1
 ```
 
 ## 2020 03 13
+
+### Fuente
 
 * A la fecha, en Argentina la mayoría de los casos son importados. Se detecta transmisión local en
 contactos estrechos, sin evidencia de transmisión comunitaria.
@@ -174,6 +201,8 @@ antecedente de viaje a Europa y Egipto.
 
 ## 2020 03 14
 
+### Fuente
+
 * A la fecha, en Argentina la mayoría de los casos son importados. Se detecta transmisión local en
 contactos estrechos, sin evidencia de transmisión comunitaria.
 * Hoy fueron confirmados once (11) nuevos casos de COVID-19. Pertenecen a la Ciudad de Buenos
@@ -182,21 +211,20 @@ con antecedentes de viaje a zona de riesgo, mientras que el otro caso confirmado
 contacto estrecho de casos confirmados. El total de casos confirmados en Argentina es de cuarenta y
 cinco (45), de los cuales dos (2) fallecieron. Los once pacientes se encuentran cumpliendo el
 aislamiento establecido por las autoridades sanitarias.
+* Distribución inducida a partir de [La Nación](https://www.lanacion.com.ar/sociedad/coronavirus-argentina-se-sumaron-11-casos-nuevos-nid2343459).
 
 ### CSV
 
-No dice cómo están distribuidos. Los reparto a ojo:
-
 ```
-2020,03,14,CONFIRMADO,CABA,3
-2020,03,14,CONFIRMADO,SANTAFE,3
-2020,03,14,CONFIRMADO,CHACO,1
-2020,03,14,CONFIRMADO,PCIABSAS,3
+2020,03,14,CONFIRMADO,CABA,6
+2020,03,14,CONFIRMADO,SANTAFE,1
+2020,03,14,CONFIRMADO,CHACO,2
+2020,03,14,CONFIRMADO,PCIABSAS,2 
 ```
-
-Seguro se puede deducir mirando noticias de los diarios
 
 ## 2020 03 15
+
+### Fuente
 
 * A la fecha, en Argentina la mayoría de los casos son importados. Se detecta transmisión local en
 contactos estrechos, sin evidencia de transmisión comunitaria.
@@ -218,6 +246,8 @@ pacientes se encuentran cumpliendo el aislamiento establecido por las autoridade
 
 ## 2020 03 16
 
+### Fuente
+
 * A la fecha, en Argentina la mayoría de los casos son importados. Se detecta transmisión local en
 contactos estrechos, sin evidencia de transmisión comunitaria y el país continúa en fase de
 contención.
@@ -238,6 +268,8 @@ encuentran cumpliendo el aislamiento establecido por las autoridades sanitarias.
 ```
 
 ## 2020 03 17
+
+### Fuente
 
 * Al momento, en Argentina la mayoría de los casos son importados y se detecta transmisión local en
 contactos estrechos, sin evidencia de transmisión comunitaria. El país continúa en fase de
@@ -277,6 +309,8 @@ PCIABSAS corregido por información posterior
 
 ## 2020 03 18
 
+### Fuente
+
 * Al momento, en Argentina la mayoría de los casos son importados y se detecta transmisión local en
 conglomerados. En el país coexisten estrategias de contención y mitigación de mortalidad y
 transmisión.
@@ -305,9 +339,12 @@ transmisión.
 2020,03,18,CONFIRMADO,PCIABSAS,6
 2020,03,18,CONFIRMADO,CORDOBA,1
 2020,03,18,CONFIRMADO,ENTRERIOS,1
+2020,03,18,MUERTE,CABA,1
 ```
 
 ## 2020 03 19
+
+### Fuente
 
 * Al momento, en Argentina la mayoría de los casos son importados y se detecta transmisión local en
 conglomerados. En Argentina coexisten estrategias de contención y mitigación de mortalidad y
@@ -342,10 +379,11 @@ transmisión.
 
 ## 2020 03 20
 
+### Fuente
+
 * Al momento, en Argentina la mayoría de los casos son importados y se detecta transmisión local en
 conglomerados. En Argentina coexisten estrategias de contención y mitigación de mortalidad y
 transmisión.
-
 * Hoy fueron confirmados 30 nuevos casos de COVID-19:
 - 9 en Provincia de Buenos Aires
 - 9 en la Ciudad Autónoma de Buenos Aires
@@ -356,12 +394,12 @@ transmisión.
 - 1 Corrientes
 - 2 Neuquén
 - 1 Santiago del Estero
-
 * De los 30 casos, 22 corresponden a personas con antecedente de viaje a zona de riesgo, mientras
   que 4 con contactos estrechos de casos confirmados. Los otros 4 se encuentran en investigación
   para determinar el antecedente epidemiológico.
 * El total de casos confirmados en Argentina es de 158, de los cuales 3 fallecieron. Los pacientes se
   encuentran cumpliendo el aislamiento establecido por las autoridades sanitarias.
+* Wikipedia dice que Neuquén 1 y San Luis 1: **PENDIENTE:** revisar.
 
 ### CSV
 
@@ -428,6 +466,8 @@ Hoy fueron confirmados 67 nuevos casos de COVID-19:
 
 ## 2020 03 22
 
+### Fuente
+
 * Al momento, en Argentina la mayoría de los casos son importados, se detecta transmisión local en
 conglomerados y se identifica un caso de posible transmisión comunitaria que se encuentra en
 investigación. En nuestro país coexisten estrategias de contención y mitigación de mortalidad y
@@ -462,6 +502,8 @@ aislamiento domiciliario con seguimiento diario establecido por protocolo.
 
 ## 2020 03 23
 
+### Fuente
+
 * Al momento, en Argentina la mayoría de los casos son importados, se detecta transmisión
 local en conglomerados y se identifica casos de posible transmisión comunitaria que se
 encuentran en investigación. En nuestro país coexisten estrategias de contención y
@@ -474,7 +516,7 @@ Hoy fueron confirmados 36 nuevos casos de COVID-19:
 - 3 Córdoba
 - 4 en Chaco
 
-De los 36 casos, 17 corresponden a personas con antecedente de viaje a zonas con
+* De los 36 casos, 17 corresponden a personas con antecedente de viaje a zonas con
 transmisión comunitaria, mientras que 5 son contactos estrechos de casos confirmados, 14
 se encuentran en investigación para determinar el antecedente epidemiológico..El total de casos confirmados en Argentina es de 301*, de los cuales 4 fallecieron. Las
 autoridades sanitarias de las provincias se encuentran realizando la investigación
@@ -482,7 +524,7 @@ epidemiológica de los nuevos casos confirmados, con el fin de detectar los cont
 estrechos para que cumplan el aislamiento domiciliario con seguimiento diario establecido
 por protocolo.
 
-*Debido a la reclasificación de un caso que se encontraba duplicado.
+* Debido a la reclasificación de un caso que se encontraba duplicado.
 Nota: la notificación de los casos por jurisdicción se realiza teniendo en cuenta la residencia
 según el Registro Nacional de las Personas. Pudiendo variar en función de la investigación
 de la jurisdicción.
@@ -499,35 +541,30 @@ de la jurisdicción.
 
 ## 2020 03 24
 
-NOTA: Este parece duplicado del anterior
+### Fuente
+* Hoy fueron confirmados 86 nuevos casos de COVID-19:
+  - 30 en la Ciudad Autónoma de Buenos Aires
+  - 30 en Provincia de Buenos Aires
+  - 9 en Chaco
+  - 7 en Córdoba
+  - 4 en Tierra del Fuego
+  - 3 Santa Fe
+  - 1 en La Pampa
+  - 1 en Neuquén
+  - 1 en Santa Cruz
 
-* Al momento, en Argentina la mayoría de los casos son importados, se detecta transmisión
-local en conglomerados y se identifican casos de posible transmisión comunitaria que se
-encuentran en investigación. En nuestro país coexisten estrategias de contención y
-mitigación de mortalidad y transmisión.
+### CSV
 
-Ayer fueron confirmados 36 nuevos casos de COVID-19:
-- 11 en la Ciudad Autónoma de Buenos Aires
-- 5 en Provincia de Buenos Aires
-- 13 en Santa Fé
-- 3 en Córdoba
-- 4 en Chaco
-
-De los 36 casos, 17 corresponden a personas con antecedente de viaje a zonas con
-transmisión comunitaria, mientras que 5 son contactos estrechos de casos confirmados,
-14 se encuentran en investigación para determinar el antecedente epidemiológico y un
-caso de posible transmisión comunitaria que se encuentra en investigación.Del total, el 39,5% son mujeres y el 60,5% son hombres.
-
-Respecto de las franjas etarias afectadas, el 2% de los casos registrados corresponde a
-menores de 14 años, el 79% a casos de entre 15 y 59 años; y el 19% a casos de mayores de
-60.
-
-En Argentina, en total se han constatado 1453 casos negativos por laboratorio y 1242
-casos descartados por investigación epidemiológica.
-A la fecha, fueron dados de alta 52 casos.
-El total de casos confirmados en Argentina es de 301, de los cuales 4 fallecieron. Las
-autoridades sanitarias de las provincias se encuentran realizando la investigación
-epidemiológica de los nuevos casos confirmados, con el fin de detectar los contactos
-estrechos para que cumplan el aislamiento domiciliario con seguimiento diario establecido
-por protocolo.
-
+```
+2020,03,24,CONFIRMADO,CABA,30
+2020,03,24,CONFIRMADO,PCIABSAS,30
+2020,03,24,CONFIRMADO,CHACO,9
+2020,03,24,CONFIRMADO,CORDOBA,7
+2020,03,24,CONFIRMADO,TIERRADELFUEGO,4
+2020,03,24,CONFIRMADO,SANTAFE,3
+2020,03,24,CONFIRMADO,LAPAMPA,1
+2020,03,24,CONFIRMADO,NEUQUEN,1
+2020,03,24,CONFIRMADO,SANTACRUZ,1
+2020,03,24,MUERTE,CHACO,1
+2020,03,24,MUERTE,PCIABSAS,1
+```
