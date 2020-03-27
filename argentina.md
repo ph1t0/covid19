@@ -2,7 +2,7 @@
 
 ## Fuentes
 
-* Principalmente https://www.argentina.gob.ar/coronavirus/informe-diario
+* Principalmente https://www.argentina.gob.ar/coronavirus/informe-diario.
 * Noticias de diarios, que no coinciden con los pdfs.
 * [Wikipedia](https://es.wikipedia.org/wiki/Pandemia_de_enfermedad_por_coronavirus_de_2020_en_Argentina)
 
@@ -48,7 +48,7 @@ year,month,day,case,place,new
 
 ```
 2020,03,06,CONFIRMADO,CABA,4
-2020,03,06,CONFIRMADO,CORDOBA,1
+2020,03,06,CONFIRMADO,PCIABSAS,1
 2020,03,06,CONFIRMADO,CORDOBA,1
 ```
 
@@ -56,10 +56,10 @@ year,month,day,case,place,new
 
 ### Fuente
 
-* no hay pdf del ministerio de salud
+* No hay información del ministerio de salud.
 * Según [La Nación](https://www.lanacion.com.ar/sociedad/confirman-primer-muerto-coronavirus-argentina-hombre-63-nid2341027) hoy fue la primer muerte y ya había 9 casos en Argentina.
 * [Wikipedia](https://es.wikipedia.org/wiki/Pandemia_de_enfermedad_por_coronavirus_de_2020_en_Argentina)
-* El caso de muerte no se registró antes como "confirmado". Yo lo agrego.
+* El caso de muerte no se registró antes como "confirmado". Se agrega.
 
 ### CSV
 
@@ -99,8 +99,8 @@ year,month,day,case,place,new
 ### CSV
 
 ```
-2020,03,8,CONFIRMADO,CABA,2
-2020,03,8,CONFIRMADO,PCIABSAS,1
+2020,03,08,CONFIRMADO,CABA,2
+2020,03,08,CONFIRMADO,PCIABSAS,1
 ```
 
 ## 2020 03 09
@@ -168,17 +168,19 @@ corresponden a casos con antecedentes de viaje a zona de riesgo, mientras que tr
 confrmados son contactos estrechos de casos confrmados. El total de casos confrmados en
 Argentna es de treinta y un (31) casos, de los cuales uno (1) falleció. Los pacientes se encuentran
 cumpliendo el aislamiento establecido por las autoridades sanitarias
+* Distribuición:
+  * Cordoba 1: [fuente](https://www.eldiariodecarlospaz.com.ar/nacionales/2020/3/12/coronavirus-los-primeros-casos-autoctonos-en-argentina-uno-en-cordoba-82869.html)
+  * Chaco 2: [fuente](https://www.ellitoral.com.ar/corrientes/2020-3-12-17-3-0-confirma-dos-nuevos-casos-de-coronavirus-en-resistencia)
+  * Bs As 4: [fuente](https://www.telam.com.ar/notas/202003/440349-detectan-cuatro-nuevos-casos-son-ocho-infectados-coronavirus-buenos-aires.html)
 
 ### CSV
 
-No dice cómo están distribuidos. Los reparto a ojo:
-
 ```
 2020,03,12,CONFIRMADO,CHACO,2
-2020,03,12,CONFIRMADO,CORDOBA,2
-2020,03,12,CONFIRMADO,PCIABSAS,3
+2020,03,12,CONFIRMADO,CORDOBA,1
+2020,03,12,CONFIRMADO,PCIABSAS,4
 2020,03,12,CONFIRMADO,CABA,3
-2020,03,12,RECUPERADO,CABA,1
+2020,03,12,ALTA,CABA,1
 ```
 
 ## 2020 03 13
@@ -196,6 +198,10 @@ autoridades sanitarias.
 * En el día de la fecha se confirmó el segundo fallecimiento de un paciente con diagnóstico de COVID-
 19. Se trata de hombre de 61 años, residente en la provincia de Chaco. El paciente presentaba
 antecedente de viaje a Europa y Egipto.
+* 3 Recuperados **en total** y de ellos fue el primer paciente dado de alta:
+  * [fuente1](https://www.clarin.com/ciudades/17-casos-coronavirus-confirmados-ciudad-buenos-aires_0_GMcWtBuA.html)
+  * [fuente2](https://www.perfil.com/noticias/salud/se-confirmaron-once-nuevos-casos-la-cifra-mas-alta-para-un-solo-dia.phtml)
+  * [fuente3](https://www.infobae.com/coronavirus/2020/03/13/radiografia-del-coronavirus-en-la-ciudad-y-la-provincia-de-buenos-aires-dieron-de-alta-a-otros-dos-pacientes-y-estudian-casi-400-posibles-casos/)
 
 ### CSV
 
@@ -203,6 +209,7 @@ antecedente de viaje a Europa y Egipto.
 2020,03,13,CONFIRMADO,PCIABSAS,1
 2020,03,13,CONFIRMADO,CABA,2
 2020,03,13,MUERTE,CHACO,1
+2020,03,13,ALTA,CABA,2
 ```
 
 ## 2020 03 14
@@ -218,14 +225,17 @@ contacto estrecho de casos confirmados. El total de casos confirmados en Argenti
 cinco (45), de los cuales dos (2) fallecieron. Los once pacientes se encuentran cumpliendo el
 aislamiento establecido por las autoridades sanitarias.
 * Distribución inducida a partir de [La Nación](https://www.lanacion.com.ar/sociedad/coronavirus-argentina-se-sumaron-11-casos-nuevos-nid2343459).
+* 1 Recuperado [Fuente](https://web.archive.org/web/20200315195812/https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
+* De las dos fuentes citadas se extrae que habia en ese momento 9 pacientes nuevos en CABA y que dos eran de BSAS, por lo que este dia es correcto contabilizar 7 personas.
 
 ### CSV
 
 ```
-2020,03,14,CONFIRMADO,CABA,6
+2020,03,14,CONFIRMADO,CABA,7
 2020,03,14,CONFIRMADO,SANTAFE,1
-2020,03,14,CONFIRMADO,CHACO,2
-2020,03,14,CONFIRMADO,PCIABSAS,2 
+2020,03,14,CONFIRMADO,CHACO,1
+2020,03,14,CONFIRMADO,PCIABSAS,2
+2020,03,13,ALTA,CABA,1
 ```
 
 ## 2020 03 15
@@ -240,6 +250,7 @@ dos (2 ) en Chaco, dos (2) en Tierra del Fuego y uno (1) en Provincia de Buenos 
 que los tres (3) restantes son contactos estrechos de casos confirmados. El total de casos
 confirmados en Argentina es de cincuenta y seis (56) casos, de los cuales dos (2) fallecieron. Los
 pacientes se encuentran cumpliendo el aislamiento establecido por las autoridades sanitarias.
+* 3 Recuperados en CABA: [Fuente](https://web.archive.org/web/20200316210338/https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
 
 ### CSV
 
@@ -248,6 +259,7 @@ pacientes se encuentran cumpliendo el aislamiento establecido por las autoridade
 2020,03,15,CONFIRMADO,CHACO,2
 2020,03,15,CONFIRMADO,TIERRADELFUEGO,2
 2020,03,15,CONFIRMADO,PCIABSAS,1
+2020,03,13,ALTA,CABA,3
 ```
 
 ## 2020 03 16
@@ -264,6 +276,8 @@ trata de un profesional de la salud de Chaco que trabaja en un establecimiento d
 casos confirmados.
 * El total de casos confirmados en Argentina es de 65, de los cuales 2 fallecieron. Los pacientes se
 encuentran cumpliendo el aislamiento establecido por las autoridades sanitarias.
+* 3 Recuperados en CABA y 1 BSAS: [Fuente](https://web.archive.org/web/20200317172217/https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
+
 
 ### CSV
 
@@ -271,6 +285,8 @@ encuentran cumpliendo el aislamiento establecido por las autoridades sanitarias.
 2020,03,16,CONFIRMADO,CABA,5
 2020,03,16,CONFIRMADO,CHACO,3
 2020,03,16,CONFIRMADO,PCIABSAS,1
+2020,03,13,ALTA,CABA,3
+2020,03,13,ALTA,PCIABSAS,1
 ```
 
 ## 2020 03 17
@@ -281,9 +297,9 @@ encuentran cumpliendo el aislamiento establecido por las autoridades sanitarias.
 contactos estrechos, sin evidencia de transmisión comunitaria. El país continúa en fase de
 contención.
 
-* Hoy fueron confirmados 14 nuevos casos de COVID-19:
+* Hoy fueron confirmados 14 (13**) nuevos casos de COVID-19:
 - 4 en la Ciudad Autónoma de Buenos Aires
-- 2 en Provincia de Buenos Aires
+- 2 (1**) en Provincia de Buenos Aires
 - 2 en Córdoba
 - 1 en Chaco
 - 1 en Jujuy
@@ -294,11 +310,14 @@ contención.
 
 * De los 14 casos, 12 corresponden a personas con antecedente de viaje a zona de riesgo, mientras
   que los otros 2 se trata de contactos estrechos de casos confirmados.
-* El total de casos confirmados en Argentina es de 79, de los cuales 2 fallecieron. Los pacientes se
+* El total de casos confirmados en Argentina es de 79 (78), de los cuales 2 fallecieron. Los pacientes se
   encuentran cumpliendo el aislamiento establecido por las autoridades sanitarias.
+** Cabe aclarar que 1 de los casos notificados en Provincia de Buenos Aires se reclasificó como paciente en seguimiento
+y no constituyó un caso nuevo. Se trató de una persona a la que se le realizó un laboratorio para alta médica.
+* 1 Recuperado Rio Negro: [Fuente](https://www.infobae.com/coronavirus/2020/03/17/confirmaron-los-primeros-casos-de-coronavirus-en-salta-y-jujuy/)
 
 ### CSV
- 
+
 PCIABSAS corregido por información posterior
 
 ```
@@ -311,6 +330,7 @@ PCIABSAS corregido por información posterior
 2020,03,17,CONFIRMADO,RIONEGRO,1
 2020,03,17,CONFIRMADO,ENTRERIOS,1
 2020,03,17,CONFIRMADO,SANTACRUZ,1
+2020,03,17,ALTA,RIONEGRO,1
 ```
 
 ## 2020 03 18
@@ -336,6 +356,7 @@ transmisión.
 * Cabe aclarar que 1 de los casos notificados en el día de ayer de Provincia de Buenos Aires se
   reclasificó como paciente en seguimiento y no constituía un caso nuevo. Se trató de una persona a la
   que se le realizó un laboratorio para alta médica.
+* 4 Recuperados CABA: [Fuente](https://web.archive.org/web/20200319232546/https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
 
 ### CSV
 
@@ -346,6 +367,7 @@ transmisión.
 2020,03,18,CONFIRMADO,CORDOBA,1
 2020,03,18,CONFIRMADO,ENTRERIOS,1
 2020,03,18,MUERTE,CABA,1
+2020,03,18,ALTA,CABA,4
 ```
 
 ## 2020 03 19
@@ -370,6 +392,7 @@ transmisión.
   determinar el antecedente epidemiológico
 * El total de casos confirmados en Argentina es de 128, de los cuales 3 fallecieron. Los pacientes se
   encuentran cumpliendo el aislamiento establecido por las autoridades sanitarias.
+* 6 Recuperados CABA: [Fuente](https://web.archive.org/web/20200320011124/https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
 
 ### CSV
 
@@ -381,6 +404,7 @@ transmisión.
 2020,03,19,CONFIRMADO,TUCUMAN,1
 2020,03,19,CONFIRMADO,SANTAFE,1
 2020,03,19,CONFIRMADO,RIONEGRO,1
+2020,03,19,ALTA,CABA,6
 ```
 
 ## 2020 03 20
@@ -406,6 +430,8 @@ transmisión.
 * El total de casos confirmados en Argentina es de 158, de los cuales 3 fallecieron. Los pacientes se
   encuentran cumpliendo el aislamiento establecido por las autoridades sanitarias.
 * Wikipedia dice que Neuquén 1 y San Luis 1: **PENDIENTE:** revisar.
+    * El caso de San Luis fue revisado. Se rtata de un sanlusino que vive en Córdoba.[Fuente](http://agenciasanluis.com/notas/2020/03/21/un-sanluiseno-con-coronavirus-esta-aislado-en-cordoba-el-paciente-nunca-fue-sospechado-por-nuestro-sistema-de-salud-en-san-luis-solo-existen-hoy-tres-casos-sospechosos/)
+* 1 Recuperado en BSAS: [Fuente](https://www.gba.gob.ar/saludprovincia/noticias/dan_de_alta_la_primera_paciente_con_coronavirus_atendida_en_la_provincia_de)
 
 ### CSV
 
@@ -419,6 +445,7 @@ transmisión.
 2020,03,20,CONFIRMADO,CORRIENTES,1
 2020,03,20,CONFIRMADO,NEUQUEN,2
 2020,03,20,CONFIRMADO,SANTIAGODELESTERO,1
+2020,03,20,ALTA,PCIABSAS,1
 ```
 
 ## 2020 03 21
@@ -453,7 +480,8 @@ Hoy fueron confirmados 67 nuevos casos de COVID-19:
   epidemiológica de los nuevos casos confirmados, con el fin de detectar los contactos
   estrechos para que cumplan el aislamiento domiciliario con seguimiento diario establecido
   por protocolo.
-
+* 6 Recuperados en CABA: [Fuente](https://web.archive.org/web/20200322011541/https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
+    * Nota: Este numero es acumulado de los dias 20 y 21. No hay información oficial del día 20 por separado.
 ### CSV
 
 ```
@@ -468,6 +496,7 @@ Hoy fueron confirmados 67 nuevos casos de COVID-19:
 2020,03,21,CONFIRMADO,TUCUMAN,1
 2020,03,21,CONFIRMADO,RIONEGRO,1
 2020,03,21,MUERTE,PCIABSAS,1
+2020,03,21,ALTA,CABA,6
 ```
 
 ## 2020 03 22
@@ -494,6 +523,9 @@ El total de casos confirmados en Argentina es de 266, de los cuales 4 falleciero
 sanitarias de las provincias se encuentran realizando la investigación epidemiológica de los
 nuevos casos confirmados, con el fin de detectar los contactos estrechos para que cumplan el
 aislamiento domiciliario con seguimiento diario establecido por protocolo.
+* 11 Recuperados en CABA:
+    * [Fuente](https://web.archive.org/web/20200323080012/https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
+    * [Fuente2](https://www.lanacion.com.ar/sociedad/coronavirus-argentina-hay-xx-casos-nuevos-cifra-nid2346297)
 
 ### CSV
 
@@ -504,6 +536,7 @@ aislamiento domiciliario con seguimiento diario establecido por protocolo.
 2020,03,22,CONFIRMADO,CHACO,7
 2020,03,22,CONFIRMADO,TUCUMAN,5
 2020,03,22,CONFIRMADO,MISIONES,1
+2020,03,21,ALTA,CABA,11
 ```
 
 ## 2020 03 23
@@ -516,7 +549,7 @@ encuentran en investigación. En nuestro país coexisten estrategias de contenci
 mitigación de mortalidad y transmisión.
 
 Hoy fueron confirmados 36 nuevos casos de COVID-19:
-- 11 en la Ciudad Autónoma de Buenos Aires
+- 10 en la Ciudad Autónoma de Buenos Aires
 - 5 en Provincia de Buenos Aires
 - 13 Santa Fe
 - 3 Córdoba
@@ -524,32 +557,40 @@ Hoy fueron confirmados 36 nuevos casos de COVID-19:
 
 * De los 36 casos, 17 corresponden a personas con antecedente de viaje a zonas con
 transmisión comunitaria, mientras que 5 son contactos estrechos de casos confirmados, 14
-se encuentran en investigación para determinar el antecedente epidemiológico..El total de casos confirmados en Argentina es de 301*, de los cuales 4 fallecieron. Las
-autoridades sanitarias de las provincias se encuentran realizando la investigación
+se encuentran en investigación para determinar el antecedente epidemiológico.
+El total de casos confirmados en Argentina es de 301 (**IMPORTANTE**: Debido a la reclasificación de un caso que se encontraba
+duplicado), de los cuales 4 fallecieron. Las autoridades sanitarias de las provincias se encuentran realizando la investigación
 epidemiológica de los nuevos casos confirmados, con el fin de detectar los contactos
 estrechos para que cumplan el aislamiento domiciliario con seguimiento diario establecido
 por protocolo.
-
-* Debido a la reclasificación de un caso que se encontraba duplicado.
+Del total, el 39,5% son mujeres y el 60,5% son hombres.
+Respecto de las franjas etarias afectadas, el 2% de los casos registrados corresponde a
+menores de 14 años, el 79% a casos de entre 15 y 59 años; y el 19% a casos de mayores de
+60.
+* A la fecha, fueron dados de alta 52 casos.
 Nota: la notificación de los casos por jurisdicción se realiza teniendo en cuenta la residencia
 según el Registro Nacional de las Personas. Pudiendo variar en función de la investigación
 de la jurisdicción.
+* 5 Recuperados en CABA: [Fuente](https://web.archive.org/web/20200324222725/https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
+* 7 Recuperados: Asignados a BS AS **Revisar**
 
 ### CSV
 
 ```
-2020,03,23,CONFIRMADO,CABA,11
+2020,03,23,CONFIRMADO,CABA,10
 2020,03,23,CONFIRMADO,PCIABSAS,5
 2020,03,23,CONFIRMADO,SANTAFE,13
 2020,03,23,CONFIRMADO,CORDOBA,3
 2020,03,23,CONFIRMADO,CHACO,4
+2020,03,23,ALTA,CABA,5
+2020,03,23,ALTA,PCIABSAS,7
 ```
 
 ## 2020 03 24
 
 ### Fuente
 * Hoy fueron confirmados 86 nuevos casos de COVID-19:
-  - 30 en la Ciudad Autónoma de Buenos Aires
+  - 30 (28 **) en la Ciudad Autónoma de Buenos Aires
   - 30 en Provincia de Buenos Aires
   - 9 en Chaco
   - 7 en Córdoba
@@ -558,11 +599,21 @@ de la jurisdicción.
   - 1 en La Pampa
   - 1 en Neuquén
   - 1 en Santa Cruz
+* En el día de hoy se registraron dos personas fallecidas.
+* Del total, el 40,9% son mujeres y el 59,1% son hombres.
+Respecto de las franjas etarias afectadas, el 2% de los casos registrados corresponde a
+menores de 14 años, el 80% a casos de entre 15 y 59 años; el 18% a casos de mayores de
+60. En Argentina, en total se han constatado 1453 casos negativos por laboratorio y 1735
+casos descartados por investigación epidemiológica.
+** Cabe señalar que 2 casos informados se reclasificaron por lo que dejaron de formar parte del total.
+A la fecha, fueron dados de alta 63 casos.
+* 10 Recuperados CABA: [Fuente](https://web.archive.org/web/20200325140807/https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
+* 1 Recuperado Entre Rios: [Fuente](http://noticias.entrerios.gov.ar/notas/dieron-el-alta-a-uno-de-los-pacientes-positivos-para-coronavirus-en-entre-ros.htm)
 
 ### CSV
 
 ```
-2020,03,24,CONFIRMADO,CABA,30
+2020,03,24,CONFIRMADO,CABA,28
 2020,03,24,CONFIRMADO,PCIABSAS,30
 2020,03,24,CONFIRMADO,CHACO,9
 2020,03,24,CONFIRMADO,CORDOBA,7
@@ -573,4 +624,106 @@ de la jurisdicción.
 2020,03,24,CONFIRMADO,SANTACRUZ,1
 2020,03,24,MUERTE,CHACO,1
 2020,03,24,MUERTE,PCIABSAS,1
+2020,03,24,ALTA,CABA,10
+2020,03,24,ALTA,ENTRERIOS,1
+```
+
+## 2020 03 25
+
+### Fuente
+
+* Hoy fueron confirmados 117 nuevos casos de COVID-19:
+- 30 en Provincia de Buenos Aires
+- 22 Santa Fe
+- 21 en la Ciudad Autónoma de Buenos Aires
+- 15 en Córdoba
+- 12 en Chaco
+- 5 Santa Cruz
+- 4 San Luis
+- 3 Entre Ríos
+- 2 Tucumán
+- 1 Mendoza
+- 1 en Neuquén
+- 1 Tierra del Fuego
+* El total de casos confirmados en Argentina a las 19 horas de hoy es de 502, (*), 8
+fallecieron.
+* En el día de hoy se registraron dos personas fallecidas. Una mujer de 81 años de la
+Ciudad de Aires que era un contacto estrecho de un caso confirmado y presentaba
+enfermedad neurológica crónica. Una mujer de Chaco de 73 años de Chaco que
+presentaba diabetes, hipertensión y obesidad.
+* A la fecha, fueron dados de alta transitoria 70 casos y 2 pacientes con alta definitiva. Hay 22
+pacientes internados (reportado por las jurisdicciones).
+* 4 Recuperados CABA: [Fuente](https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
+* 1 Recuperado Córdoba: [Fuente](https://prensa.cba.gov.ar/informacion-general/informe-diario-de-casos-covid-19/)
+* 4 Recuperados: Asignados a BS AS **Revisar**
+
+### CSV
+
+```
+2020,03,25,CONFIRMADO,CABA,30
+2020,03,25,CONFIRMADO,SANTAFE,22
+2020,03,25,CONFIRMADO,PCIABSAS,21
+2020,03,25,CONFIRMADO,CORDOBA,15
+2020,03,25,CONFIRMADO,CHACO,12
+2020,03,25,CONFIRMADO,SANTACRUZ,5
+2020,03,25,CONFIRMADO,SANLUIS,4
+2020,03,25,CONFIRMADO,ENTRERIOS,3
+2020,03,25,CONFIRMADO,TUCUMAN,2
+2020,03,25,CONFIRMADO,MENDOZA,1
+2020,03,25,CONFIRMADO,NEUQUEN,1
+2020,03,25,CONFIRMADO,TIERRADELFUEGO,1
+2020,03,25,MUERTE,CHACO,1
+2020,03,25,MUERTE,CABA,1
+2020,03,25,ALTA,CABA,4
+2020,03,25,ALTA,CORDOBA,1
+2020,03,25,ALTA,PCIABSAS,4
+```
+
+## 2020 03 26
+
+### Fuente
+
+* Hoy fueron confirmados 87 nuevos casos de COVID-19:
+- 30 en la Ciudad Autónoma de Buenos Aires
+- 27 en Provincia de Buenos Aires
+- 12 Santa Fe
+- 3 en Chaco
+- 3 en Córdoba
+- 3 en Tierra del Fuego
+- 3 en Neuquén
+- 2 Jujuy
+- 2 en Santa Cruz
+- 1 Mendoza
+- 1 San Luis
+* De los 87 casos, 37 corresponden a personas con antecedente de viaje a zonas con
+transmisión comunitaria, mientras que 24 son contactos estrechos de casos
+confirmados y 26 se encuentran en investigación para determinar el antecedente
+epidemiológico.
+El total de casos confirmados en Argentina es de 589, de los cuales 12 fallecieron.
+Las autoridades sanitarias de las provincias se encuentran realizando la
+investigación epidemiológica de los nuevos casos confirmados, con el fin de
+detectar los contactos estrechos para que cumplan el aislamiento domiciliario con
+seguimiento diario establecido por protocolo.
+Los fallecidos pertenecen a Chaco, un hombre de 59 años con antecedente de viaje a
+Estados Unidos y comorbilidades en estudio; dos hombres de la provincia de Buenos
+Aires, uno de 89 y otro de 78; y una mujer de 82 años, de Ciudad de Buenos Aires.
+* TODO: Agregar recuperados (todavia no hay información).
+
+### CSV
+
+```
+2020,03,26,CONFIRMADO,CABA,30
+2020,03,26,CONFIRMADO,SANTAFE,12
+2020,03,26,CONFIRMADO,PCIABSAS,27
+2020,03,26,CONFIRMADO,CORDOBA,3
+2020,03,26,CONFIRMADO,CHACO,3
+2020,03,26,CONFIRMADO,TIERRADELFUEGO,3
+2020,03,26,CONFIRMADO,NEUQUEN,3
+2020,03,26,CONFIRMADO,SANTACRUZ,2
+2020,03,26,CONFIRMADO,JUJUY,2
+2020,03,26,CONFIRMADO,MENDOZA,1
+2020,03,26,CONFIRMADO,SANLUIS,1
+2020,03,26,MUERTE,CHACO,1
+2020,03,26,MUERTE,CABA,1
+2020,03,26,MUERTE,PCIABSAS,2
 ```
