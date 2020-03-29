@@ -567,7 +567,6 @@ Del total, el 39,5% son mujeres y el 60,5% son hombres.
 Respecto de las franjas etarias afectadas, el 2% de los casos registrados corresponde a
 menores de 14 años, el 79% a casos de entre 15 y 59 años; y el 19% a casos de mayores de
 60.
-* A la fecha, fueron dados de alta 52 casos.
 Nota: la notificación de los casos por jurisdicción se realiza teniendo en cuenta la residencia
 según el Registro Nacional de las Personas. Pudiendo variar en función de la investigación
 de la jurisdicción.
@@ -585,6 +584,7 @@ de la jurisdicción.
 2020,03,23,ALTA,CABA,5
 2020,03,23,ALTA,PCIABSAS,7
 ```
+
 
 ## 2020 03 24
 
@@ -606,7 +606,7 @@ menores de 14 años, el 80% a casos de entre 15 y 59 años; el 18% a casos de ma
 60. En Argentina, en total se han constatado 1453 casos negativos por laboratorio y 1735
 casos descartados por investigación epidemiológica.
 ** Cabe señalar que 2 casos informados se reclasificaron por lo que dejaron de formar parte del total.
-A la fecha, fueron dados de alta 63 casos.
+* A la fecha, fueron dados de alta 52 casos.
 * 10 Recuperados CABA: [Fuente](https://web.archive.org/web/20200325140807/https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
 * 1 Recuperado Entre Rios: [Fuente](http://noticias.entrerios.gov.ar/notas/dieron-el-alta-a-uno-de-los-pacientes-positivos-para-coronavirus-en-entre-ros.htm)
 
@@ -627,6 +627,7 @@ A la fecha, fueron dados de alta 63 casos.
 2020,03,24,ALTA,CABA,10
 2020,03,24,ALTA,ENTRERIOS,1
 ```
+
 
 ## 2020 03 25
 
@@ -651,8 +652,7 @@ fallecieron.
 Ciudad de Aires que era un contacto estrecho de un caso confirmado y presentaba
 enfermedad neurológica crónica. Una mujer de Chaco de 73 años de Chaco que
 presentaba diabetes, hipertensión y obesidad.
-* A la fecha, fueron dados de alta transitoria 70 casos y 2 pacientes con alta definitiva. Hay 22
-pacientes internados (reportado por las jurisdicciones).
+A la fecha, fueron dados de alta 63 casos.
 * 4 Recuperados CABA: [Fuente](https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
 * 1 Recuperado Córdoba: [Fuente](https://prensa.cba.gov.ar/informacion-general/informe-diario-de-casos-covid-19/)
 * 4 Recuperados: Asignados a BS AS **Revisar**
@@ -678,7 +678,6 @@ pacientes internados (reportado por las jurisdicciones).
 2020,03,25,ALTA,CORDOBA,1
 2020,03,25,ALTA,PCIABSAS,4
 ```
-
 ## 2020 03 26
 
 ### Fuente
@@ -694,7 +693,7 @@ pacientes internados (reportado por las jurisdicciones).
 - 2 Jujuy
 - 2 en Santa Cruz
 - 1 Mendoza
-- 1 San Luis
+- 1 San Luis -> Se contabiliza para la provincia de Cordoba. Ver dia 28/3
 * De los 87 casos, 37 corresponden a personas con antecedente de viaje a zonas con
 transmisión comunitaria, mientras que 24 son contactos estrechos de casos
 confirmados y 26 se encuentran en investigación para determinar el antecedente
@@ -707,7 +706,9 @@ seguimiento diario establecido por protocolo.
 Los fallecidos pertenecen a Chaco, un hombre de 59 años con antecedente de viaje a
 Estados Unidos y comorbilidades en estudio; dos hombres de la provincia de Buenos
 Aires, uno de 89 y otro de 78; y una mujer de 82 años, de Ciudad de Buenos Aires.
-* TODO: Agregar recuperados (todavia no hay información).
+* A la fecha, fueron dados de alta transitoria 70 casos y 2 pacientes con alta definitiva. Hay 22
+pacientes internados (reportado por las jurisdicciones).
+* 9 Recuperados CABA: [Fuente](http://web.archive.org/web/20200327221150/https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
 
 ### CSV
 
@@ -715,15 +716,96 @@ Aires, uno de 89 y otro de 78; y una mujer de 82 años, de Ciudad de Buenos Aire
 2020,03,26,CONFIRMADO,CABA,30
 2020,03,26,CONFIRMADO,SANTAFE,12
 2020,03,26,CONFIRMADO,PCIABSAS,27
-2020,03,26,CONFIRMADO,CORDOBA,3
+2020,03,26,CONFIRMADO,CORDOBA,4
 2020,03,26,CONFIRMADO,CHACO,3
 2020,03,26,CONFIRMADO,TIERRADELFUEGO,3
 2020,03,26,CONFIRMADO,NEUQUEN,3
 2020,03,26,CONFIRMADO,SANTACRUZ,2
 2020,03,26,CONFIRMADO,JUJUY,2
 2020,03,26,CONFIRMADO,MENDOZA,1
-2020,03,26,CONFIRMADO,SANLUIS,1
 2020,03,26,MUERTE,CHACO,1
 2020,03,26,MUERTE,CABA,1
 2020,03,26,MUERTE,PCIABSAS,2
+2020,03,26,ALTA,CABA,9
+```
+
+## 2020 03 27
+
+### Fuente
+
+* Hoy fueron confirmados 101 nuevos casos de COVID-19 (nuevos y reclasificados*):
+- 43 (33)  en la Ciudad Autónoma de Buenos Aires
+- 36 (30) en Provincia de Buenos Aires
+- 3 en Chaco
+- 5 en Córdoba
+- 6 en Tucumán
+- 9 Santa Fe
+- 3 en Entre Ríos
+- 4 en Neuquén
+- 1 en Mendoza
+- 3 en Río Negro
+- 2 en Corrientes
+- 1 en Santiago del Estero
+- 1 en Misiones
+* A la fecha, fueron dados de alta transitoria 74 casos y 2 pacientes con alta definitiva.
+* **IMPORTANTE**: 16 casos (anteriores) que en el día de ayer figuraban sin localidad de residencia y hoy se agruparon en las
+jurisdicciones correspondientes. De loas partes de CABA se estima que le corresponden 10 de estos 16. # son asignados a Buenos aires **Revisar**
+* 3 Muertes - CABA, MENDOZA y : [Fuente](https://www.cronista.com/economiapolitica/Coronavirus-Mendoza-sumo-su-primera-victima-y-son-14-los-fallecidos-en-el-pais-20200327-0086.html)
+* 2 Muertes: PCIABSAS **Revisar**
+* 13 Recuperados CABA: [fuente](http://web.archive.org/web/20200328132335/https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
+
+### CSV
+
+```
+2020,03,27,CONFIRMADO,CABA,33
+2020,03,27,CONFIRMADO,PCIABSAS,30
+2020,03,27,CONFIRMADO,CHACO,3
+2020,03,27,CONFIRMADO,CORDOBA,5
+2020,03,27,CONFIRMADO,TUCUMAN,6
+2020,03,27,CONFIRMADO,SANTAFE,9
+2020,03,27,CONFIRMADO,ENTRERIOS,3
+2020,03,27,CONFIRMADO,NEUQUEN,4
+2020,03,27,CONFIRMADO,MENDOZA,1
+2020,03,27,CONFIRMADO,RIONEGRO,3
+2020,03,27,CONFIRMADO,CORRIENTES,2
+2020,03,27,CONFIRMADO,SANTIAGODELESTERO,1
+2020,03,27,CONFIRMADO,MISIONES,1
+2020,03,27,MUERTE,RIONEGRO,1
+2020,03,27,MUERTE,CABA,1
+2020,03,27,MUERTE,MENDOZA,1
+2020,03,27,MUERTE,PCIABSAS,2
+2020,03,27,ALTA,CABA,13
+```
+
+## 2020 03 28
+
+### Fuente
+Detalle por provincia
+- 18 en la Ciudad Autónoma de Buenos Aires
+- 8 en Provincia de Buenos Aires
+- 13 Santa Fe
+- 5 en Chaco
+- 1 en Córdoba -> Es un caso confirmado de San Luis que fue reclasificada la provincia de
+residencia a Córdoba. Se contabiliza el dia 26/3
+- 4 en Tierra del Fuego
+- 2 en Neuquén
+- 1 en Mendoza
+- 4 en Corrientes
+* A la fecha, fueron dados de alta transitoria 78 casos y 2 pacientes con alta definitiva.
+En el día de hoy se confirmaron 2 nuevos fallecidos, sumando 19 en total en la
+Argentina.
+
+### CSV
+
+```
+2020,03,27,CONFIRMADO,CABA,18
+2020,03,27,CONFIRMADO,PCIABSAS,8
+2020,03,27,CONFIRMADO,CHACO,5
+2020,03,27,CONFIRMADO,SANTAFE,13
+2020,03,27,CONFIRMADO,NEUQUEN,2
+2020,03,27,CONFIRMADO,MENDOZA,1
+2020,03,27,CONFIRMADO,CORRIENTES,4
+2020,03,27,CONFIRMADO,TIERRADELFUEGO,4
+2020,03,27,MUERTE,CABA,1
+2020,03,27,MUERTE,PCIABSAS,1
 ```
