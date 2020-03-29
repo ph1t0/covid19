@@ -30,14 +30,16 @@ def plot_global(df):
 
 
 if __name__ == "__main__":
-    out = subprocess.call("./make_csv_from_md > arg.csv", shell=True)
+    subprocess.call("./make_csv_from_md ./COVID-19-ARGENTINA/argentina.md > arg.csv", shell=True)
     df = pd.read_csv("arg.csv")
+    subprocess.call("rm -f arg.csv", shell=True)
     df = df.set_index(pd.to_datetime(df[['year', 'month', 'day']].apply(lambda x: "-".join((map(str,x.values))), axis=1) , format="%Y-%m-%d"))[['case', 'place', 'new']]
     acumulado = df.reset_index().groupby(['index', 'case']).sum().unstack().fillna(0).cumsum()
     acumulado.columns = acumulado.columns.droplevel()
 
     plot_global(acumulado)
 
+    midpoint = (df.new.values.max() - df.new.values.min()) / 4
     heat = df[df.case == 'CONFIRMADO'].reset_index().groupby(['index', 'place'])['new'].max().unstack()
     heat.index = heat.index.strftime("%d-%m")
     sns.heatmap(heat, annot=True, cbar=False, cmap='coolwarm', center=midpoint, annot_kws={'size':10})
