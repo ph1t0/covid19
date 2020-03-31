@@ -590,7 +590,7 @@ de la jurisdicción.
 
 ### Fuente
 * Hoy fueron confirmados 86 nuevos casos de COVID-19:
-  - 30 (28 **) en la Ciudad Autónoma de Buenos Aires
+  - 30 (28 *) en la Ciudad Autónoma de Buenos Aires
   - 30 en Provincia de Buenos Aires
   - 9 en Chaco
   - 7 en Córdoba
