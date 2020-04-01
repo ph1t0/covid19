@@ -815,10 +815,12 @@ Argentina.
 ### Fuente
 
 * https://www.argentina.gob.ar/sites/default/files/29-03-20_reporte_vespertino_covid_19.pdf
+* 7 Recuperados CABA: [fuente](https://web.archive.org/web/20200330163928/https://www.buenosaires.gob.ar/salud/noticias/actualizacion-de-los-casos-coronavirus-en-la-ciudad-buenos-aires)
+* A la fecha, el total de altas fue de 91: 84 casos con alta transitoria y 7 pacientes con alta
+definitiva.
+* 2 Muertes PCIABSAS y TUCUMAN (a última hora del domingo): [Fuente](https://www.infobae.com/politica/2020/03/29/confirmaron-un-nuevo-muerto-y-75-nuevos-casos-de-coronavirus-la-cantidad-de-infectados-ascendio-a-820/)
 
 ### CSV
-
-Dice que se registró una muerte pero no dónde
 
 ```
 2020,03,29,CONFIRMADO,PCIABSAS,16
@@ -833,6 +835,9 @@ Dice que se registró una muerte pero no dónde
 2020,03,29,CONFIRMADO,LARIOJA,1
 2020,03,29,CONFIRMADO,MENDOZA,1
 2020,03,29,CONFIRMADO,MISIONES,1
+2020,03,29,MUERTE,PCIABSAS,1
+2020,03,29,MUERTE,TUCUMAN,1
+2020,03,29,ALTA,CABA,7
 ```
 
 ## 2020 03 30
@@ -840,6 +845,9 @@ Dice que se registró una muerte pero no dónde
 ### Fuente
 
 * https://www.argentina.gob.ar/sites/default/files/30-03-20-reporte-vespertino-covid-19.pdf
+* A la fecha, el total de altas es de 228: 219 casos con alta transitoria y 9 pacientes con alta
+definitiva.
+* 5 Recuperados CABA
 
 ### CSV
 
@@ -857,4 +865,30 @@ Dice que se registró una muerte pero no dónde
 2020,03,30,MUERTE,PCIABSAS,2
 2020,03,30,MUERTE,TUCUMAN,1
 2020,03,30,MUERTE,NEUQUEN,1
+2020,03,30,ALTA,CABA,5
+```
+
+## 2020 03 31
+
+### Fuente
+
+* https://www.argentina.gob.ar/sites/default/files/31-03-20-reporte-vespertino-covid-19.pdf
+* A la fecha, el total de altas es de 240 personas. 228 son altas transitorias y 12
+definitivas.
+
+```
+2020,03,31,CONFIRMADO,PCIABSAS,17
+2020,03,31,CONFIRMADO,CABA,19
+2020,03,31,CONFIRMADO,CHACO,3
+2020,03,31,CONFIRMADO,CORDOBA,14
+2020,03,31,CONFIRMADO,CORRIENTES,1
+2020,03,31,CONFIRMADO,MENDOZA,2
+2020,03,31,CONFIRMADO,MISIONES,1
+2020,03,31,CONFIRMADO,RIONEGRO,1
+2020,03,31,CONFIRMADO,SANTAFE,22
+2020,03,31,CONFIRMADO,TIERRADELFUEGO,7
+2020,03,31,CONFIRMADO,TUCUMAN,1
+2020,03,31,MUERTE,CHACO,1
+2020,03,31,MUERTE,LARIOJA,1
+2020,03,31,MUERTE,CORDOBA,1
 ```
