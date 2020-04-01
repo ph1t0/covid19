@@ -43,6 +43,7 @@ def plot_global(df):
 
 
 def make_df_from_md(md_path):
+    print(f'Reading {md_path}')
     csv_bytes = subprocess.check_output(['./make_csv_from_md', md_path])
     return pd.read_csv(StringIO(csv_bytes.decode()))
  
@@ -55,14 +56,31 @@ if __name__ == "__main__":
     acumulado = df.reset_index().groupby(['index', 'case']).sum().unstack().fillna(0).cumsum()
     acumulado.columns = acumulado.columns.droplevel()
 
-    assert all(p in PLACES for p in df.place.unique()), df.place.unique()
+    # Lugares afectados:
+    lugares_afectados = df.place.unique()
+    lugares_afectados_geordenados = [p for p in PLACES if p in lugares_afectados]
+
+    # Chequeo que no haya typos en los nombres de los lugares
+    assert all(p in PLACES for p in lugares_afectados), lugares_afectados
 
     plot_global(acumulado)
 
     midpoint = (df.new.values.max() - df.new.values.min()) / 4
     heat = df[df.case == 'CONFIRMADO'].reset_index().groupby(['index', 'place'])['new'].max().unstack()
     heat.index = heat.index.strftime("%d-%m")
-    sns.heatmap(heat, annot=True, cbar=False, cmap='coolwarm', center=midpoint, annot_kws={'size':10})
+
+
+    # from IPython import embed; embed()
+
+    # Transpongo para que quede el tiempo horizontal
+    sns.heatmap(heat[lugares_afectados_geordenados].T,
+                annot=True,
+                cbar=False,
+                cmap='coolwarm',
+                center=midpoint,
+                annot_kws={'size':10})
+
+    plt.xlabel('Fecha')
     plt.ylabel("")
     plt.title("Confirmados por provincia")
     plt.show()
