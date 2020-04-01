@@ -23,17 +23,19 @@ PLACES = '''
 
 
 def plot_global(df):
+    acumulado = df.reset_index().groupby(['index', 'case']).sum().unstack().fillna(0).cumsum()
+    acumulado.columns = acumulado.columns.droplevel()
     sns.set()
     sns.set_context("talk")
-    sns.lineplot(data=df, markers=[".", ".", "."], dashes=False)
+    sns.lineplot(data=acumulado, markers=[".", ".", "."], dashes=False)
 
-    fit = np.linspace(0, len(df), len(df))**2
-    plt.plot(df.index, fit, "--", color="lightgray")
-    plt.annotate(r'$x^2$',  xy=(df.index[17], 320), xycoords='data', xytext=(-50, -60), textcoords='offset points', arrowprops=dict(arrowstyle='->', color='black', connectionstyle="angle3,angleA=90,angleB=0"))
+    fit = np.linspace(0, len(acumulado), len(acumulado))**2
+    plt.plot(acumulado.index, fit, "--", color="lightgray")
+    plt.annotate(r'$x^2$',  xy=(acumulado.index[17], 320), xycoords='data', xytext=(-50, -60), textcoords='offset points', arrowprops=dict(arrowstyle='->', color='black', connectionstyle="angle3,angleA=90,angleB=0"))
 
-    fit = np.linspace(0, len(df), len(df))**3
-    plt.plot(df.index, fit, "--", color="lightgray")
-    plt.annotate(r'$x^3$',  xy=(df.index[6], 280), xycoords='data', xytext=(-50, -60), textcoords='offset points', arrowprops=dict(arrowstyle='->', color='black', connectionstyle="angle3,angleA=90,angleB=0"))
+    fit = np.linspace(0, len(acumulado), len(acumulado))**3
+    plt.plot(acumulado.index, fit, "--", color="lightgray")
+    plt.annotate(r'$x^3$',  xy=(acumulado.index[6], 280), xycoords='data', xytext=(-50, -60), textcoords='offset points', arrowprops=dict(arrowstyle='->', color='black', connectionstyle="angle3,angleA=90,angleB=0"))
 
     plt.title("Coronavirus en Argentina", fontsize=18)  # for title
     plt.xlabel("Fecha", fontsize=14)
@@ -67,9 +69,7 @@ if __name__ == "__main__":
     assert all(p in PLACES for p in lugares_afectados), lugares_afectados
 
     # ACUMULADO
-    acumulado = df.reset_index().groupby(['index', 'case']).sum().unstack().fillna(0).cumsum()
-    acumulado.columns = acumulado.columns.droplevel()
-    plot_global(acumulado)
+    plot_global(df)
 
     # GEOGRAFICO
     midpoint = (df.new.values.max() - df.new.values.min()) / 4
