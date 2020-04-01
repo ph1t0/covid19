@@ -12,10 +12,20 @@ python3 -m venv venv
 . venv/bin/activate
 pip3 install .
 ```
+
+## Requirements
+
+### On Arch Linux
+
+* `pacman -S tk`
+
+
 ## Examples
 
 
+```
 df[:, :, 'US', 'Deaths'].groupby('date').max().pct_change()
 df[:, :, 'Argentina', 'Confirmed'].groupby('date').max().pct_change()
 df.loc[:, :, ['Italy', 'China', 'US'], 'Confirmed'].groupby('date').max().unstack().plot()
 df.loc[:, :, ['Italy', 'China', 'US'], 'Confirmed'].unstack().groupby(['country','date']).max().unstack(level=0).plot()
+```
