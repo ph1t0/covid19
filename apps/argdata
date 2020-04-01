@@ -5,14 +5,27 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+from io import StringIO
 #import matplotlib.cm as cm
+
+PLACES = '''
+      JUJUY         FORMOSA
+    SALTA                             CHACO     MISIONES
+    CATAMARCA TUCUMAN SANTIAGODELESTERO   CORRIENTES
+    LARIOJA           CORDOBA         SANTAFE ENTRERIOS
+    SANJUAN SANLUIS
+    MENDOZA         LAPAMPA             PCIABSAS CABA
+    NEUQUEN RIONEGRO
+            CHUBUT
+            SANTACRUZ
+            TIERRADELFUEGO
+    '''.split()
 
 
 def plot_global(df):
     sns.set()
     sns.set_context("talk")
     sns.lineplot(data=df, markers=[".", ".", "."], dashes=False)
-
 
     fit = np.linspace(0, len(df), len(df))**2
     plt.plot(df.index, fit, "--", color="lightgray")
@@ -29,13 +42,20 @@ def plot_global(df):
     plt.show()
 
 
+def make_df_from_md(md_path):
+    csv_bytes = subprocess.check_output(['./make_csv_from_md', md_path])
+    return pd.read_csv(StringIO(csv_bytes.decode()))
+ 
+
 if __name__ == "__main__":
-    subprocess.call("./make_csv_from_md ./COVID-19-ARGENTINA/argentina.md > arg.csv", shell=True)
-    df = pd.read_csv("arg.csv")
-    subprocess.call("rm -f arg.csv", shell=True)
+
+    df = make_df_from_md('COVID-19-ARGENTINA/argentina.md')
+
     df = df.set_index(pd.to_datetime(df[['year', 'month', 'day']].apply(lambda x: "-".join((map(str,x.values))), axis=1) , format="%Y-%m-%d"))[['case', 'place', 'new']]
     acumulado = df.reset_index().groupby(['index', 'case']).sum().unstack().fillna(0).cumsum()
     acumulado.columns = acumulado.columns.droplevel()
+
+    assert all(p in PLACES for p in df.place.unique()), df.place.unique()
 
     plot_global(acumulado)
 
