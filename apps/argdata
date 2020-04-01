@@ -44,6 +44,16 @@ def plot_global(df):
     plt.show()
 
 
+def plot_daily_cases(df):
+    news = df[df.case == 'CONFIRMADO'].reset_index().groupby(['index', 'place']).sum().unstack().fillna(0)
+    news.columns = news.columns.droplevel()
+    sns.set()
+    sns.set_context("talk")
+    chart = sns.lineplot(data=news, markers=['.']*30, dashes=False)
+    chart.set_xticklabels(chart.get_xticklabels(), rotation=45, horizontalalignment='right')
+    plt.show()
+
+
 def make_df_from_md(md_path):
     print(f'Reading {md_path}')
     csv_bytes = subprocess.check_output(['./make_csv_from_md', md_path])
@@ -67,6 +77,9 @@ if __name__ == "__main__":
 
     # Chequeo que no haya typos en los nombres de los lugares
     assert all(p in PLACES for p in lugares_afectados), lugares_afectados
+
+    # DIARIO
+    plot_daily_cases(df)
 
     # ACUMULADO
     plot_global(df)
