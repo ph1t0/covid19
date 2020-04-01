@@ -45,16 +45,19 @@ def plot_global(df):
 def make_df_from_md(md_path):
     print(f'Reading {md_path}')
     csv_bytes = subprocess.check_output(['./make_csv_from_md', md_path])
-    return pd.read_csv(StringIO(csv_bytes.decode()))
+    df = pd.read_csv(StringIO(csv_bytes.decode()))
+    date_index = pd.to_datetime(df[['year', 'month', 'day']].apply(lambda x: "-".join((map(str, x.values))),
+                                                                   axis=1),
+                                format="%Y-%m-%d")
+    df = df.set_index(date_index)[['case', 'place', 'new']]
+    return df
  
 
 if __name__ == "__main__":
 
     df = make_df_from_md('COVID-19-ARGENTINA/argentina.md')
 
-    df = df.set_index(pd.to_datetime(df[['year', 'month', 'day']].apply(lambda x: "-".join((map(str,x.values))), axis=1) , format="%Y-%m-%d"))[['case', 'place', 'new']]
-    acumulado = df.reset_index().groupby(['index', 'case']).sum().unstack().fillna(0).cumsum()
-    acumulado.columns = acumulado.columns.droplevel()
+    # from IPython import embed; embed()
 
     # Lugares afectados:
     lugares_afectados = df.place.unique()
@@ -63,14 +66,15 @@ if __name__ == "__main__":
     # Chequeo que no haya typos en los nombres de los lugares
     assert all(p in PLACES for p in lugares_afectados), lugares_afectados
 
+    # ACUMULADO
+    acumulado = df.reset_index().groupby(['index', 'case']).sum().unstack().fillna(0).cumsum()
+    acumulado.columns = acumulado.columns.droplevel()
     plot_global(acumulado)
 
+    # GEOGRAFICO
     midpoint = (df.new.values.max() - df.new.values.min()) / 4
     heat = df[df.case == 'CONFIRMADO'].reset_index().groupby(['index', 'place'])['new'].max().unstack()
     heat.index = heat.index.strftime("%d-%m")
-
-
-    # from IPython import embed; embed()
 
     # Transpongo para que quede el tiempo horizontal
     sns.heatmap(heat[lugares_afectados_geordenados].T,
