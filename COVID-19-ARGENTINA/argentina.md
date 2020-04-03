@@ -819,6 +819,7 @@ Argentina.
 * A la fecha, el total de altas fue de 91: 84 casos con alta transitoria y 7 pacientes con alta
 definitiva.
 * 2 Muertes PCIABSAS y TUCUMAN (a última hora del domingo): [Fuente](https://www.infobae.com/politica/2020/03/29/confirmaron-un-nuevo-muerto-y-75-nuevos-casos-de-coronavirus-la-cantidad-de-infectados-ascendio-a-820/)
+* NOTA: Los informes diarios si bien indican la existencia de la muerte en TUCUMAN, no la contabilizan y arrastran el error en los informes siguientes.
 
 ### CSV
 
@@ -848,6 +849,7 @@ definitiva.
 * A la fecha, el total de altas es de 228: 219 casos con alta transitoria y 9 pacientes con alta
 definitiva.
 * 5 Recuperados CABA
+* **Revisar** 122 Recuperados sin distribuir por falta de informacion. Asignados a PCIABSAS
 
 ### CSV
 
@@ -866,7 +868,9 @@ definitiva.
 2020,03,30,MUERTE,TUCUMAN,1
 2020,03,30,MUERTE,NEUQUEN,1
 2020,03,30,ALTA,CABA,5
+2020,03,30,ALTA,PCIABSAS,122
 ```
+
 
 ## 2020 03 31
 
@@ -875,6 +879,11 @@ definitiva.
 * https://www.argentina.gob.ar/sites/default/files/31-03-20-reporte-vespertino-covid-19.pdf
 * A la fecha, el total de altas es de 240 personas. 228 son altas transitorias y 12
 definitivas.
+* 5 Recuperados CABA
+* **Revisar** 7 Recuperados sin distribuir por falta de informacion. Asignados a PCIABSAS
+
+
+### CSV
 
 ```
 2020,03,31,CONFIRMADO,PCIABSAS,17
@@ -891,4 +900,51 @@ definitivas.
 2020,03,31,MUERTE,CHACO,1
 2020,03,31,MUERTE,LARIOJA,1
 2020,03,31,MUERTE,CORDOBA,1
+2020,03,30,ALTA,CABA,5
+2020,03,30,ALTA,PCIABSAS,7
+```
+
+
+## 2020 04 01
+
+### Fuente
+
+* https://www.argentina.gob.ar/sites/default/files/01-04-20_reporte_vespertino_covid-19.pdf
+* A la fecha, el total de altas es de 248 personas. 218 son altas transitorias y 30 definitivas.
+
+### CSV
+
+```
+2020,04,01,CONFIRMADO,PCIABSAS,10
+2020,04,01,CONFIRMADO,CABA,10
+2020,04,01,CONFIRMADO,CHACO,12
+2020,04,01,CONFIRMADO,CORDOBA,6
+2020,04,01,CONFIRMADO,CORRIENTES,1
+2020,04,01,CONFIRMADO,ENTRERIOS,1
+2020,04,01,CONFIRMADO,MENDOZA,10
+2020,04,01,CONFIRMADO,NEUQUEN,4
+2020,04,01,CONFIRMADO,SALTA,2
+2020,04,01,CONFIRMADO,SANLUIS,1
+2020,04,01,CONFIRMADO,SANTACRUZ,10
+2020,04,01,CONFIRMADO,SANTAFE,11
+2020,04,01,CONFIRMADO,TUCUMAN,1
+2020,04,01,MUERTE,CABA,1
+2020,04,01,MUERTE,PCIABSAS,2
+2020,04,01,MUERTE,SANTAFE,1
+2020,04,01,MUERTE,NEUQUEN,1
+2020,03,30,ALTA,CABA,8
+```
+
+## 2020 04 02
+
+### Fuente
+
+*
+* A la fecha, el total de altas es de 256 personas. 220 son altas transitorias y 36 definitivas.
+
+### CSV
+
+```
+2020,04,02,MUERTE,MENDOZA,1
+2020,04,02,MUERTE,CHACO,1
 ```
