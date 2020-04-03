@@ -67,7 +67,7 @@ def make_df_from_md(md_path):
 
 if __name__ == "__main__":
 
-    df = make_df_from_md('COVID-19-ARGENTINA/argentina.md')
+    df = make_df_from_md('argentina/raw_annotated.md')
 
     # from IPython import embed; embed()
 
