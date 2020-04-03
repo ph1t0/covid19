@@ -40,7 +40,7 @@ def plot_global(df):
     plt.title("Coronavirus en Argentina", fontsize=18)  # for title
     plt.xlabel("Fecha", fontsize=14)
     plt.ylabel("Casos", fontsize=14)
-    plt.ylim(0, df['CONFIRMADO'].max())
+    plt.ylim(0, df.groupby('case').new.sum().max() * 1.2)
     plt.show()
 
 
