@@ -4,9 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from argentina.raw import date_indexed_raw, DISTRITOS, distritos_afectados
-from argentina.daily import daily
+from argentina.proc import daily_new_cases
 #import matplotlib.cm as cm
-
 
 
 def plot_global(df):
@@ -32,8 +31,7 @@ def plot_global(df):
 
 
 def plot_daily_cases(df):
-    news = daily(df)
-    news.columns = news.columns.droplevel()
+    news = daily_new_cases(df)
     sns.set()
     sns.set_context("talk")
     chart = sns.lineplot(data=news, markers=['.']*30, dashes=False)
