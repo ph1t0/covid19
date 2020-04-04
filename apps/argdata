@@ -1,25 +1,11 @@
 #!/usr/bin/env python3
-import subprocess
 from IPython import embed
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
 import seaborn as sns
-from io import StringIO
+from argentina.raw import date_indexed_raw, DISTRITOS, distritos_afectados
 #import matplotlib.cm as cm
 
-PLACES = '''
-      JUJUY         FORMOSA
-    SALTA                             CHACO     MISIONES
-    CATAMARCA TUCUMAN SANTIAGODELESTERO   CORRIENTES
-    LARIOJA           CORDOBA         SANTAFE ENTRERIOS
-    SANJUAN SANLUIS
-    MENDOZA         LAPAMPA             PCIABSAS CABA
-    NEUQUEN RIONEGRO
-            CHUBUT
-            SANTACRUZ
-            TIERRADELFUEGO
-    '''.split()
 
 
 def plot_global(df):
@@ -54,29 +40,12 @@ def plot_daily_cases(df):
     plt.show()
 
 
-def make_df_from_md(md_path):
-    print(f'Reading {md_path}')
-    csv_bytes = subprocess.check_output(['./make_csv_from_md', md_path])
-    df = pd.read_csv(StringIO(csv_bytes.decode()))
-    date_index = pd.to_datetime(df[['year', 'month', 'day']].apply(lambda x: "-".join((map(str, x.values))),
-                                                                   axis=1),
-                                format="%Y-%m-%d")
-    df = df.set_index(date_index)[['case', 'place', 'new']]
-    return df
- 
-
 if __name__ == "__main__":
 
-    df = make_df_from_md('argentina/raw_annotated.md')
 
-    # from IPython import embed; embed()
+    df = date_indexed_raw
 
-    # Lugares afectados:
-    lugares_afectados = df.place.unique()
-    lugares_afectados_geordenados = [p for p in PLACES if p in lugares_afectados]
-
-    # Chequeo que no haya typos en los nombres de los lugares
-    assert all(p in PLACES for p in lugares_afectados), lugares_afectados
+    _geordenados = list(filter(lambda d: d in distritos_afectados(df), DISTRITOS))
 
     # DIARIO
     plot_daily_cases(df)
@@ -90,7 +59,7 @@ if __name__ == "__main__":
     heat.index = heat.index.strftime("%d-%m")
 
     # Transpongo para que quede el tiempo horizontal
-    sns.heatmap(heat[lugares_afectados_geordenados].T,
+    sns.heatmap(heat[_geordenados].T,
                 annot=True,
                 cbar=False,
                 cmap='coolwarm',
@@ -99,7 +68,7 @@ if __name__ == "__main__":
 
     plt.xlabel('Fecha')
     plt.ylabel("")
-    plt.yticks(np.arange(0.5,21.5, 1), lugares_afectados_geordenados, fontsize=10)
+    plt.yticks(np.arange(0.5,21.5, 1), _geordenados, fontsize=10)
     plt.xticks(rotation=45)
     plt.xticks(fontsize=10)
     plt.title("Confirmados por provincia")

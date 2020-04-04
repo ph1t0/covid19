@@ -9,7 +9,7 @@ setup(name='pandamia',
       author='Gonzalo Figueroa',
       author_email='gfigue@gmail.com',
       url='https://github.com/ph1t0/covid19.git',
-      packages=['covid19'],
+      packages=['argentina'],
       scripts=glob.glob("apps/*"),
       install_requires=['pandas', 'matplotlib', 'ipython', 'sh', 'seaborn', 'numpy'],
      )
