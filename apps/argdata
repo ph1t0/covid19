@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from IPython import embed
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -72,4 +73,28 @@ if __name__ == "__main__":
     plt.xticks(fontsize=10)
     plt.title("Confirmados por provincia")
     plt.show()
+
+    #NUEVOS CASOS VS. ACUMULADOS
+    cases_per_day = df.reset_index().groupby(['index', 'case']).sum().unstack().fillna(0)
+    cases_per_day.columns = cases_per_day.columns.droplevel()
+
+    #Armo pandas con index: fechaa  y dos columnas de casos confirmados: nuevos y acumulado
+    data = pd.concat([cases_per_day.CONFIRMADO.rename('new_cases'), cases_per_day.CONFIRMADO.cumsum().rename('acumulado')], axis=1)
+
+    plt.loglog(data.acumulado, data.new_cases, marker=".")
+
+    # me quedo con las fechas en las que el cambio porcentual de nuevos casos fue mayor a THRESHOLD_PERCENTAGE
+    THRESHOLD_PERCENTAGE = 60
+    threshold = THRESHOLD_PERCENTAGE / -100
+    locs = data.reset_index().index[(data.new_cases/data.acumulado).pct_change() < threshold].tolist()
+    locs_data = data.index[(data.new_cases/data.acumulado).pct_change() < threshold].strftime("%d-%m").to_list()
+
+    # señalo esos puntos
+    for loc in range(len(locs)):
+        plt.annotate(r'${}$'.format(locs_data[loc]),  xy=(data.iloc[locs[loc]-1].acumulado, data.iloc[locs[loc]-1].new_cases), xycoords='data', fontsize=10, xytext=(-60, 30), textcoords='offset points', arrowprops=dict(arrowstyle='->', color='black', connectionstyle="angle3,angleA=-90,angleB=0"))
+
+    plt.xlabel('Casos Totales')
+    plt.ylabel("Nuevos casos")
+    plt.show()
+
     #embed()
