@@ -1,0 +1,69 @@
+#!/usr/bin/env python3
+import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta
+from pathlib import Path
+from IPython import embed
+from argentina.raw import date_indexed_raw, DISTRITOS, distritos_afectados
+from argentina.proc import daily_new_cases
+
+ONE_DAY = timedelta(days=1)
+
+MUERTE = 'MUERTE'
+CONFIRMADO = 'CONFIRMADO'
+
+DEST = Path('argentina/raw_annotated.md')
+
+ADDENDA = []
+
+
+def add(date, case, place, q):
+    ADDENDA.append((date, case, place, q))
+
+
+if __name__ == "__main__":
+
+    df = date_indexed_raw
+
+    date = datetime.today() - ONE_DAY
+    case = CONFIRMADO
+
+    header = f'Date has already been selected as {date:%Y-%m-%d}'
+    header += '\n'
+    header += 'you can change it using something like: date += ONE_DAY'
+    header += '\n'
+    header += f'Case has already been selected as {case}'
+    header += '\n'
+    header += 'Call start() when ready and save(date) when finished.'
+
+    def start():
+        for d in DISTRITOS:
+            valid = False
+            while not valid:
+                try:
+                    q = int(input(f'# of new cases in {d} (CTRL+C to skip): '))
+                    valid = True
+                except KeyboardInterrupt:
+                    valid = True
+                    print('')
+                    q = None
+                except ValueError:
+                    continue
+            if q:
+                add(date, case, d, q)
+        for a in ADDENDA:
+            print(a)
+
+
+    def save(date):
+        with open(DEST, 'a') as f:
+            f.write('\n')
+            f.write(f'## {date:%Y %m %d}\n')
+            f.write('\n')
+            f.write(f'### CSV\n')
+            f.write('```\n')
+            for date, case, place, q in ADDENDA:
+                f.write(f'{date:%Y,%m,%d},{case},{place},{q}\n')
+            f.write('```\n')
+
+    embed(confirm_exit=False, header=header)
