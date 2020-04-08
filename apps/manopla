@@ -45,7 +45,7 @@ def save(date, case):
         f.write('```\n')
         for date, case, place, q in ADDENDA:
             f.write(f'{date:%Y,%m,%d},{case},{place},{q}\n')
-            f.write('```\n')
+        f.write('```\n')
 
 
 if __name__ == "__main__":
