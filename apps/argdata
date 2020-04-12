@@ -70,8 +70,8 @@ if __name__ == "__main__":
 
     _geordenados = list(filter(lambda d: d in distritos_afectados(df), DISTRITOS))
 
-    # DIARIO
-    plot_daily_cases(df)
+    #   # DIARIO
+    #   plot_daily_cases(df)
 
     # ACUMULADO
     plot_global(df)
