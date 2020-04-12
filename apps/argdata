@@ -24,6 +24,9 @@ def plot_global(df):
     #   plt.plot(acumulado.index, fit, "--", color="lightgray")
     #   plt.annotate(r'$x^3$',  xy=(acumulado.index[6], 280), xycoords='data', xytext=(-50, -60), textcoords='offset points', arrowprops=dict(arrowstyle='->', color='black', connectionstyle="angle3,angleA=90,angleB=0"))
 
+    fit = -1600 + 95*np.linspace(0, len(acumulado), len(acumulado))
+    plt.plot(acumulado.index, fit, "--", color="lightgray")
+
     plt.title("Coronavirus en Argentina", fontsize=18)  # for title
     plt.xlabel("Fecha", fontsize=14)
     plt.ylabel("# casos", fontsize=14)
