@@ -40,20 +40,7 @@ def plot_daily_cases(df):
     plt.show()
 
 
-if __name__ == "__main__":
-
-
-    df = date_indexed_raw
-
-    _geordenados = list(filter(lambda d: d in distritos_afectados(df), DISTRITOS))
-
-    # DIARIO
-    plot_daily_cases(df)
-
-    # ACUMULADO
-    plot_global(df)
-
-    # GEOGRAFICO
+def plot_geo(df):
     midpoint = (df.new.values.max() - df.new.values.min()) / 10
     heat = df[df.case == 'CONFIRMADO'].reset_index().groupby(['index', 'place'])['new'].max().unstack()
     heat.index = heat.index.strftime("%d-%m")
@@ -72,7 +59,25 @@ if __name__ == "__main__":
     plt.xticks(rotation=45)
     plt.xticks(fontsize=10)
     plt.title("Confirmados por provincia")
+    plt.grid(True)
     plt.show()
+
+
+if __name__ == "__main__":
+
+
+    df = date_indexed_raw
+
+    _geordenados = list(filter(lambda d: d in distritos_afectados(df), DISTRITOS))
+
+    # DIARIO
+    plot_daily_cases(df)
+
+    # ACUMULADO
+    plot_global(df)
+
+    # GEOGRAFICO
+    plot_geo(df)
 
     #NUEVOS CASOS VS. ACUMULADOS
     cases_per_day = df.reset_index().groupby(['index', 'case']).sum().unstack().fillna(0)
