@@ -58,11 +58,11 @@ def plot_geo(df):
 
     plt.xlabel('Fecha')
     plt.ylabel("")
-    plt.yticks(np.arange(0.5,21.5, 1), _geordenados, fontsize=10)
+    plt.yticks(np.arange(0.5,24.5, 1), _geordenados, fontsize=10)
     plt.xticks(rotation=45)
     plt.xticks(fontsize=10)
     plt.title("Confirmados por provincia")
-    plt.grid(True)
+    #plt.grid(True)
     plt.show()
 
 
@@ -74,7 +74,7 @@ if __name__ == "__main__":
     _geordenados = list(filter(lambda d: d in distritos_afectados(df), DISTRITOS))
 
     #   # DIARIO
-    #   plot_daily_cases(df)
+    plot_daily_cases(df)
 
     # ACUMULADO
     plot_global(df)
