@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+import re
+from mypdf import pages
+
+
+PATH = '18-04-20_reporte-vespertino-covid-19.pdf'
+
+PROVINCIAS = '''Buenos Aires
+Ciudad de Buenos Aires
+Catamarca
+Chaco
+Chubut
+Córdoba
+Corrientes
+Entre Ríos
+Formosa
+Jujuy
+La Pampa
+La Rioja
+Mendoza
+Misiones
+Neuquén
+Río Negro
+Salta
+San Juan
+San Luis
+Santa Cruz
+Santa Fe
+Santiago del Estero
+Tierra del Fuego
+Tucumán'''.split('\n')
+
+def new_prov(text, prov):
+    m = re.search(prov + ' (\d+)', text)
+    return m.group(1)
+
+
+def get_text(path):
+    content = []
+    for page in pages(path):
+        for l in map(str.strip, page.split('\n')):
+            if len(l) and l not in [' ', '-']:
+                content.append(l)
+    
+    return '\n'.join(content)
+
+
+text = get_text(PATH)
+
+news = {}
+
+for prov in PROVINCIAS:
+    news[prov] = new_prov(text, prov)
+    print(f'{prov}: {news[prov]}')
+
+from IPython import embed; embed(confirm_exit=False, header='')
+
+# Escribir un parser distinto para cada formato
+# e ir guardando una lista
+# de nombres de pdfs con su parser correspondiente
