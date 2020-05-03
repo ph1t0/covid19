@@ -116,6 +116,14 @@ def plot_animation(df):
     #ani.save('animation_confirmados.gif')
     plt.show()
 
+def run_last_day_check(df):
+    total = df.groupby(['case']).sum()
+    casos_ultimo_dia = df.reset_index().groupby(['index', 'case']).sum().unstack().iloc[-1]
+    confirmados_por_provincia_ultimo_dia = df[df['case'] == 'CONFIRMADO'].reset_index().groupby(['index', 'place'])['new'].max().unstack().fillna(0).iloc[-1]
+
+    print(total)
+    print(casos_ultimo_dia)
+    print(confirmados_por_provincia_ultimo_dia)
 
 if __name__ == "__main__":
     df = date_indexed_raw
@@ -127,10 +135,12 @@ if __name__ == "__main__":
     # ACUMULADO
     plot_global(df)
 
-    ## GEOGRAFICO
+    # GEOGRAFICO
     plot_geo(df)
 
     # NUEVOS VS ACUMULADO
     nuevos_casos_pct_change(df)
     plot_animation(df)
+
+    #run_last_day_check(df)
     #embed()
